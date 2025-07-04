@@ -32,10 +32,10 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="min-h-screen w-sm sm:w-full flex items-center justify-center py-20"
+            className=" max-w-2xl justify-center mx-auto py-20"
         >
             <RevealOnScroll>
-                <div className=" px-4 w-150">
+                <div className=" px-4 w-full">
                     <h2 className="text-3xl font-bold mb-8
                  bg-gradient-to-r from-blue-500 to-purple-600
                   bg-clip-text text-transparent text-center"
@@ -78,7 +78,7 @@ export default function Contact() {
                                 onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
                         </div>
                         <button type='submit'
-                            className="w-full bg-blue-500 text-white py-3 
+                            className="w-full sm: bg-blue-500 text-white py-3 
                          px-6 rounded font-medium transition relative
                           overflow-hidden hover:-translate-y-0.5
                            hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
