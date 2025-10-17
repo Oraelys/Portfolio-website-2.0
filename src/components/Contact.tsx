@@ -124,7 +124,7 @@ const Contact = () => {
                   <h4 className="text-lg font-semibold text-text-primary mb-4">Follow Me</h4>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com/phanstudio"
+                      href="https://github.com/oraelys"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-lg bg-surface shadow-sm border border-border-light hover:shadow-md hover:scale-110 transition-all duration-200 text-text-secondary hover:text-primary-600"
@@ -132,7 +132,7 @@ const Contact = () => {
                       <Github size={20} />
                     </a>
                     <a
-                      href="mailto:ajugapeterben@gmail.com"
+                      href="mailto:alanamos0001@gmail.com"
                       className="p-3 rounded-lg bg-surface shadow-sm border border-border-light hover:shadow-md hover:scale-110 transition-all duration-200 text-text-secondary hover:text-primary-600"
                     >
                       <Mail size={20} />
