@@ -60,7 +60,7 @@ const Hero = () => {
               <Github size={28} />
             </a>
             <a
-              href="mailto:ajugapeterben@gmail.com"
+              href="mailto:alanamos0001@gmail.com"
               className="text-text-secondary hover:text-primary-600 transition-colors duration-200 hover:scale-110 transform"
             >
               <Mail size={28} />
