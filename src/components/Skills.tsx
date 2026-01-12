@@ -27,10 +27,11 @@ const Skills = () => {
       icon: Code2,
       title: 'Frontend Development',
       skills: [
-        { name: 'React/TypeScript', level: 75 },
+        { name: 'React/TypeScript', level: 85 },
         { name: 'React Native', level: 75 },
         { name: 'Next.js', level: 60 },
-        { name: 'Tailwind CSS', level: 90 }
+        { name: 'Tailwind CSS', level: 90 },
+        { name: "React Native", level: 80}
       ]
     },
     {
@@ -39,7 +40,8 @@ const Skills = () => {
       skills: [
         { name: 'MongoDB', level: 80 },
         { name: 'Fire base', level: 60},
-        { name: 'Node.js/Express', level: 65 }
+        { name: 'Node.js/Express', level: 65 },
+        { name: 'Supabase', level: 55 },
       ]
     },
     {
