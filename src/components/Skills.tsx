@@ -110,7 +110,7 @@ const Skills = () => {
           </div>
 
           {/* Certifications */}
-          <div className={`mt-16 text-center ${isVisible ? 'animate-fadeInUp animation-delay-1000' : ''}`}>
+          {/* <div className={`mt-16 text-center ${isVisible ? 'animate-fadeInUp animation-delay-1000' : ''}`}>
             <h3 className="text-2xl font-bold text-text-primary mb-8">Certifications & Achievements</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-surface p-6 rounded-lg shadow-sm border border-border-light hover:shadow-md transition-shadow duration-200">
@@ -129,7 +129,7 @@ const Skills = () => {
                 <p className="text-sm text-text-muted">Published researcher in medical technology</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

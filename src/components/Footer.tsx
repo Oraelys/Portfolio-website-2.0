@@ -42,7 +42,7 @@ const Footer = () => {
               <span>using React & TypeScript</span>
             </div>
             <p className="text-gray-400 text-sm mt-2">
-              © {currentYear} Peter Ben Ajuga. All rights reserved.
+              © {currentYear} Alan Amos. All rights reserved.
             </p>
           </div>
         </div>
