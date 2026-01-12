@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div>
-            <h3 className="text-xl font-bold mb-4">Peter Ben Ajuga</h3>
+            <h3 className="text-xl font-bold mb-4">Alan Chukwuemeka Amos</h3>
             <p className="text-gray-300 leading-relaxed">
               Software Engineer passionate about creating innovative solutions 
               through technology and continuous learning.
