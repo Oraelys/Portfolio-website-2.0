@@ -1,9 +1,5 @@
-import 
-// React,
- { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, Globe, Coins, Brain, Wrench, 
-  // Smartphone 
-} from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ExternalLink, Github, Globe, Coins, Brain, Wrench } from 'lucide-react';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,13 +66,6 @@ const Projects = () => {
       image: 'https://raw.githubusercontent.com/oraelys/Habit-Tracker-app/main/assets/images/Habittrackerimage.jpg',
       featured: true
     },
-    
-    
-  
-    // Supporting Projects
-
-
-
   ];
   
   const filters = [
@@ -113,9 +102,12 @@ const Projects = () => {
             <h3 className="text-2xl font-bold text-text-primary mb-8 text-center">Highlighted Work</h3>
             <div className="grid lg:grid-cols-2 gap-8">
               {featuredProjects.map((project, index) => (
-                <div
+                <a
                   key={project.id}
-                  className={`group card-featured overflow-hidden ${
+                  href={project.liveUrl || project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group card-featured overflow-hidden block cursor-pointer ${
                     isVisible ? 'animate-fadeInUp' : ''
                   }`}
                   style={{ animationDelay: `${index * 200}ms` }}
@@ -148,29 +140,25 @@ const Projects = () => {
                     
                     <div className="flex items-center space-x-4">
                       {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center text-primary-600 hover:text-primary-700 text-sm font-medium transition-colors duration-200"
-                        >
+                        <span className="flex items-center text-primary-600 group-hover:text-primary-700 text-sm font-medium transition-colors duration-200">
                           <ExternalLink size={18} className="mr-2" />
                           Live
-                          {/* Demo */}
-                        </a>
+                        </span>
                       )}
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-text-secondary hover:text-text-primary font-medium transition-colors duration-200"
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(project.githubUrl, '_blank');
+                        }}
+                        className="flex items-center text-text-secondary hover:text-text-primary font-medium transition-colors duration-200 cursor-pointer"
                       >
                         <Github size={18} className="mr-2" />
                         Code
-                      </a>
+                      </span>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -196,9 +184,12 @@ const Projects = () => {
           {/* All Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <div
+              <a
                 key={project.id}
-                className={`group card overflow-hidden ${
+                href={project.liveUrl || project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group card overflow-hidden block cursor-pointer ${
                   isVisible ? 'animate-fadeInUp' : ''
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -231,28 +222,25 @@ const Projects = () => {
                   
                   <div className="flex items-center space-x-3">
                     {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors duration-200"
-                      >
+                      <span className="flex items-center text-blue-600 group-hover:text-blue-700 text-sm font-medium transition-colors duration-200">
                         <ExternalLink size={16} className="mr-1" />
                         Demo
-                      </a>
+                      </span>
                     )}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-text-secondary hover:text-text-primary text-sm font-medium transition-colors duration-200"
+                    <span
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(project.githubUrl, '_blank');
+                      }}
+                      className="flex items-center text-text-secondary hover:text-text-primary text-sm font-medium transition-colors duration-200 cursor-pointer"
                     >
                       <Github size={16} className="mr-1" />
                       Code
-                    </a>
+                    </span>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
