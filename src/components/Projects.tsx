@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, Globe, Coins, Brain, Wrench } from 'lucide-react';
+import { ExternalLink, Github, Globe, Coins, Brain,  } from 'lucide-react';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'What The Burn',
-      description: 'A full-stack Web3 platform featuring a unique burn-to-claim mechanic. Users burn tokens to increase scarcity, dynamically upgrade NFTs, and boost overall collection value. I built the Solidity smart contracts, Django backend, and integrated the frontend with RainbowKit for wallet authentication.',
+      description: 'A full-stack Web3 platform featuring a unique burn-to-claim mechanic. Users burn tokens to increase scarcity, dynamically upgrade NFTs, and boost overall collection value. I built the entire frontend, and integrated the frontend with RainbowKit for wallet authentication.',
       category: 'blockchain',
       technologies: ['Solidity', 'Django', 'React', 'RainbowKit', 'Web3.js'],
       image: 'https://raw.githubusercontent.com/phanstudio/What-the-burn/refs/heads/main/public/what.png?ixlib=rb-4.0.3&auto=format&fit=crop&q=80',
@@ -51,8 +51,8 @@ const Projects = () => {
     {
       id: 3,
       title: 'Ovena',
-      description: 'A multi-restaurant food delivery platform with driver and user applications. Designed and deployed scalable backend infrastructure, integrating Paystack for payments, Mailchimp for SMS notifications, Termii for OTP verification, and GCP OAuth for secure authentication.',
-      category: 'web',
+      description: 'A multi-restaurant food delivery platform with driver and user applications. Designed and deployed scalable backend infrastructure, integrating Paystack for payments, Mailchimp for SMS notifications, Termii for OTP verification, and GCP OAuth for secure authentication. Implemented a clean and responsive frontend using React Native, ensuring a seamless user experience across devices.',
+      category: "Mobile",
       technologies: ['Django', 'PostgreSQL', 'React', 'GCP', 'Paystack'],
       image: 'https://github.com/phanstudio/ovena/blob/dev/public/food2.png?raw=true&auto=compress&cs=tinysrgb',
       featured: true
@@ -61,7 +61,7 @@ const Projects = () => {
       id: 4,
       title: 'Habit Tracker App',
       description: 'An simple but effective application for tracking desired habits on a daily, weekly or monthly basis. User friendly design. React and React-Native for the App structure and Appwrite for user authentication and data storage.',
-      category: 'web',
+      category: "Mobile",
       technologies: ['React', 'React Native', 'Appwrite'],
       image: 'https://raw.githubusercontent.com/oraelys/Habit-Tracker-app/main/assets/images/Habittrackerimage.jpg',
       featured: true
@@ -73,7 +73,7 @@ const Projects = () => {
     { id: 'blockchain', label: 'Blockchain', icon: Coins },
     { id: 'web', label: 'Web Apps', icon: Globe },
     { id: 'ai', label: 'AI/ML', icon: Brain },
-    { id: 'tools', label: 'Tools', icon: Wrench }
+    
   ];
   
 
