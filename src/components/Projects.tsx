@@ -1,5 +1,12 @@
+
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, Globe, Coins, Brain,  } from 'lucide-react';
+import {
+  ExternalLink,
+  Github,
+  Globe,
+  Coins,
+  Brain,
+} from 'lucide-react';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,82 +31,124 @@ const Projects = () => {
   }, []);
 
   const projects = [
-    // 🚀 Flagship Projects
+    // Flagship Projects
     {
       id: 1,
       title: 'Notty Terminal',
-      description: 'A revolutionary permissionless launchpad powered by a Dynamic Reputation System (DRS). Notty transforms on-chain behavior into verifiable reputation and trust, solving the rug-pull problem by creating a transparent ecosystem where every wallet builds a reputation based on real activity.',
+      description:
+        'A revolutionary permissionless launchpad powered by a Dynamic Reputation System (DRS). Notty transforms on-chain behavior into verifiable reputation and trust, solving the rug-pull problem by creating a transparent ecosystem where every wallet builds a reputation based on real activity.',
       category: 'blockchain',
       technologies: ['Solana', 'Rust', 'Anchor', 'React', 'Web3.js'],
-      image: 'https://raw.githubusercontent.com/NimrodTheDev/Notty-Terminal/refs/heads/main/public/Hero2.png?w=800',
+      image:
+        'https://raw.githubusercontent.com/NimrodTheDev/Notty-Terminal/refs/heads/main/public/Hero2.png?w=800',
       liveUrl: 'https://solana-market-place.onrender.com/',
       githubUrl: 'https://github.com/NimrodTheDev/Notty-Terminal',
-      featured: true
+      featured: true,
     },
     {
       id: 2,
       title: 'What The Burn',
-      description: 'A full-stack Web3 platform featuring a unique burn-to-claim mechanic. Users burn tokens to increase scarcity, dynamically upgrade NFTs, and boost overall collection value. I built the entire frontend, and integrated the frontend with RainbowKit for wallet authentication.',
+      description:
+        'A full-stack Web3 platform featuring a unique burn-to-claim mechanic. Users burn tokens to increase scarcity, dynamically upgrade NFTs, and boost overall collection value. I built the entire frontend and integrated it with RainbowKit for wallet authentication.',
       category: 'blockchain',
-      technologies: ['Solidity', 'Django', 'React', 'RainbowKit', 'Web3.js'],
-      image: 'https://raw.githubusercontent.com/phanstudio/What-the-burn/refs/heads/main/public/what.png?ixlib=rb-4.0.3&auto=format&fit=crop&q=80',
+      technologies: [
+        'Solidity',
+        'Django',
+        'React',
+        'RainbowKit',
+        'Web3.js',
+      ],
+      image:
+        'https://raw.githubusercontent.com/phanstudio/What-the-burn/refs/heads/main/public/what.png?ixlib=rb-4.0.3&auto=format&fit=crop&q=80',
       liveUrl: 'https://what-the-burn.vercel.app/',
       githubUrl: 'https://github.com/phanstudio/What-the-burn',
-      featured: true
+      featured: true,
     },
-    
     {
       id: 3,
       title: 'Ovena',
-      description: 'A multi-restaurant food delivery platform with driver and user applications. Designed and deployed scalable backend infrastructure, integrating Paystack for payments, Mailchimp for SMS notifications, Termii for OTP verification, and GCP OAuth for secure authentication. Implemented a clean and responsive frontend using React Native, ensuring a seamless user experience across devices.',
-      category: "Mobile",
+      description:
+        'A multi-restaurant food delivery platform with driver and user applications. Designed and deployed scalable backend infrastructure, integrating Paystack for payments, Mailchimp for SMS notifications, Termii for OTP verification, and GCP OAuth for secure authentication. Implemented a clean and responsive frontend using React Native, ensuring a seamless user experience across devices.',
+      category: 'Mobile',
       technologies: ['Django', 'PostgreSQL', 'React', 'GCP', 'Paystack'],
-      image: 'https://github.com/phanstudio/ovena/blob/dev/public/food2.png?raw=true&auto=compress&cs=tinysrgb',
-      featured: true
+      image:
+        'https://github.com/phanstudio/ovena/blob/dev/public/food2.png?raw=true&auto=compress&cs=tinysrgb',
+      featured: true,
     },
     {
       id: 4,
       title: 'Habit Tracker App',
-      description: 'An simple but effective application for tracking desired habits on a daily, weekly or monthly basis. User friendly design. React and React-Native for the App structure and Appwrite for user authentication and data storage.',
-      category: "Mobile",
+      description:
+        'A simple but effective application for tracking desired habits on a daily, weekly, or monthly basis. It features a user-friendly design, with React and React Native for the app structure and Appwrite for user authentication and data storage.',
+      category: 'Mobile',
       technologies: ['React', 'React Native', 'Appwrite'],
-      image: 'https://raw.githubusercontent.com/oraelys/Habit-Tracker-app/main/assets/images/Habittrackerimage.jpg',
-      featured: true
+      image:
+        'https://raw.githubusercontent.com/oraelys/Habit-Tracker-app/main/assets/images/Habittrackerimage.jpg',
+      featured: true,
+    },
+    {
+      id: 5,
+      title: 'Axivian Systems',
+      description:
+        'A responsive corporate consulting website built to present the company’s services, communicate its value proposition, and help prospective clients get in touch. It includes dedicated Home, Services, About, and Contact pages, with an EmailJS-powered contact form.',
+      category: 'web',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Vite',
+        'Tailwind CSS',
+        'EmailJS',
+      ],
+      image:
+        'https://consultants-company-website.vercel.app/consult%20bg.jpg',
+      liveUrl: 'https://consultants-company-website.vercel.app/',
+      githubUrl:
+        'https://github.com/Oraelys/Consultants-company-website',
+      featured: true,
     },
   ];
-  
+
   const filters = [
     { id: 'all', label: 'All Projects', icon: Globe },
     { id: 'blockchain', label: 'Blockchain', icon: Coins },
     { id: 'web', label: 'Web Apps', icon: Globe },
     { id: 'ai', label: 'AI/ML', icon: Brain },
-    
   ];
-  
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
-  const featuredProjects = projects.filter(project => project.featured);
+  const featuredProjects = projects.filter((project) => project.featured);
 
   return (
     <section id="projects" ref={sectionRef} className="py-20 bg-surface">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`transition-all duration-1000 ${
+            isVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6">
               Featured <span className="gradient-text">Projects</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8" />
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              A showcase of innovative projects spanning blockchain, AI, web development, and automation tools
+              A showcase of innovative projects spanning blockchain, AI, web
+              development, and automation tools.
             </p>
           </div>
 
           {/* Featured Projects */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-text-primary mb-8 text-center">Highlighted Work</h3>
+            <h3 className="text-2xl font-bold text-text-primary mb-8 text-center">
+              Highlighted Work
+            </h3>
+
             <div className="grid lg:grid-cols-2 gap-8">
               {featuredProjects.map((project, index) => (
                 <a
@@ -115,29 +164,33 @@ const Projects = () => {
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} project preview`}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  
+
                   <div className="p-8">
                     <h4 className="text-xl font-bold text-text-primary mb-3 group-hover:text-primary-600 transition-colors duration-200">
                       {project.title}
                     </h4>
-                    <p className="text-text-secondary mb-4 leading-relaxed">{project.description}</p>
-                    
+
+                    <p className="text-text-secondary mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
+                      {project.technologies.map((tech) => (
                         <span
-                          key={techIndex}
+                          key={tech}
                           className="px-3 py-1 bg-primary-50 text-primary-700 text-sm font-medium rounded-full border border-primary-200"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
-                    
+
                     <div className="flex items-center space-x-4">
                       {project.liveUrl && (
                         <span className="flex items-center text-primary-600 group-hover:text-primary-700 text-sm font-medium transition-colors duration-200">
@@ -145,17 +198,25 @@ const Projects = () => {
                           Live
                         </span>
                       )}
-                      <span
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          window.open(project.githubUrl, '_blank');
-                        }}
-                        className="flex items-center text-text-secondary hover:text-text-primary font-medium transition-colors duration-200 cursor-pointer"
-                      >
-                        <Github size={18} className="mr-2" />
-                        Code
-                      </span>
+
+                      {project.githubUrl && (
+                        <span
+                          role="link"
+                          className="flex items-center text-text-secondary hover:text-text-primary font-medium transition-colors duration-200"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            window.open(
+                              project.githubUrl,
+                              '_blank',
+                              'noopener,noreferrer'
+                            );
+                          }}
+                        >
+                          <Github size={18} className="mr-2" />
+                          Code
+                        </span>
+                      )}
                     </div>
                   </div>
                 </a>
@@ -197,29 +258,33 @@ const Projects = () => {
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} project preview`}
                     className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                
+
                 <div className="p-6">
                   <h4 className="text-lg font-bold text-text-primary mb-2 group-hover:text-primary-600 transition-colors duration-200">
                     {project.title}
                   </h4>
-                  <p className="text-text-secondary text-sm mb-4 leading-relaxed">{project.description}</p>
-                  
+
+                  <p className="text-text-secondary text-sm mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+
                   <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <span
-                        key={techIndex}
+                        key={tech}
                         className="px-2 py-1 bg-surface-secondary text-text-secondary text-xs font-medium rounded-md"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex items-center space-x-3">
                     {project.liveUrl && (
                       <span className="flex items-center text-blue-600 group-hover:text-blue-700 text-sm font-medium transition-colors duration-200">
@@ -227,17 +292,25 @@ const Projects = () => {
                         Demo
                       </span>
                     )}
-                    <span
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        window.open(project.githubUrl, '_blank');
-                      }}
-                      className="flex items-center text-text-secondary hover:text-text-primary text-sm font-medium transition-colors duration-200 cursor-pointer"
-                    >
-                      <Github size={16} className="mr-1" />
-                      Code
-                    </span>
+
+                    {project.githubUrl && (
+                      <span
+                        role="link"
+                        className="flex items-center text-text-secondary hover:text-text-primary text-sm font-medium transition-colors duration-200"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          event.stopPropagation();
+                          window.open(
+                            project.githubUrl,
+                            '_blank',
+                            'noopener,noreferrer'
+                          );
+                        }}
+                      >
+                        <Github size={16} className="mr-1" />
+                        Code
+                      </span>
+                    )}
                   </div>
                 </div>
               </a>
@@ -246,7 +319,9 @@ const Projects = () => {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-text-muted">No projects found for the selected category.</p>
+              <p className="text-text-muted">
+                No projects found for the selected category.
+              </p>
             </div>
           )}
         </div>
