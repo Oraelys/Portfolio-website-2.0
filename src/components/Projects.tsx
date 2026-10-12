@@ -5,8 +5,10 @@ import {
   Github,
   Globe,
   Coins,
-  Brain,
+  Smartphone,
 } from 'lucide-react';
+import ProjectGroup from './ProjectGroup';
+import { projects, projectGroups } from '../data/projects';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,89 +32,11 @@ const Projects = () => {
     return () => observer.disconnect();
   }, []);
 
-  const projects = [
-    // Flagship Projects
-    {
-      id: 1,
-      title: 'Notty Terminal',
-      description:
-        'A revolutionary permissionless launchpad powered by a Dynamic Reputation System (DRS). Notty transforms on-chain behavior into verifiable reputation and trust, solving the rug-pull problem by creating a transparent ecosystem where every wallet builds a reputation based on real activity.',
-      category: 'blockchain',
-      technologies: ['Solana', 'Rust', 'Anchor', 'React', 'Web3.js'],
-      image:
-        'https://raw.githubusercontent.com/NimrodTheDev/Notty-Terminal/refs/heads/main/public/Hero2.png?w=800',
-      liveUrl: 'https://solana-market-place.onrender.com/',
-      githubUrl: 'https://github.com/NimrodTheDev/Notty-Terminal',
-      featured: true,
-    },
-    {
-      id: 2,
-      title: 'What The Burn',
-      description:
-        'A full-stack Web3 platform featuring a unique burn-to-claim mechanic. Users burn tokens to increase scarcity, dynamically upgrade NFTs, and boost overall collection value. I built the entire frontend and integrated it with RainbowKit for wallet authentication.',
-      category: 'blockchain',
-      technologies: [
-        'Solidity',
-        'Django',
-        'React',
-        'RainbowKit',
-        'Web3.js',
-      ],
-      image:
-        'https://raw.githubusercontent.com/phanstudio/What-the-burn/refs/heads/main/public/what.png?ixlib=rb-4.0.3&auto=format&fit=crop&q=80',
-      liveUrl: 'https://what-the-burn.vercel.app/',
-      githubUrl: 'https://github.com/phanstudio/What-the-burn',
-      featured: true,
-    },
-    {
-      id: 3,
-      title: 'Ovena',
-      description:
-        'A multi-restaurant food delivery platform with driver and user applications. Designed and deployed scalable backend infrastructure, integrating Paystack for payments, Mailchimp for SMS notifications, Termii for OTP verification, and GCP OAuth for secure authentication. Implemented a clean and responsive frontend using React Native, ensuring a seamless user experience across devices.',
-      category: 'Mobile',
-      technologies: ['Django', 'PostgreSQL', 'React', 'GCP', 'Paystack'],
-      image:
-        'https://github.com/phanstudio/ovena/blob/dev/public/food2.png?raw=true&auto=compress&cs=tinysrgb',
-      featured: true,
-    },
-    {
-      id: 4,
-      title: 'Habit Tracker App',
-      description:
-        'A simple but effective application for tracking desired habits on a daily, weekly, or monthly basis. It features a user-friendly design, with React and React Native for the app structure and Appwrite for user authentication and data storage.',
-      category: 'Mobile',
-      technologies: ['React', 'React Native', 'Appwrite'],
-      image:
-        'https://raw.githubusercontent.com/oraelys/Habit-Tracker-app/main/assets/images/Habittrackerimage.jpg',
-      featured: true,
-    },
-    {
-      id: 5,
-      title: 'Axivian Systems',
-      description:
-        'A responsive corporate consulting website built to present the company’s services, communicate its value proposition, and help prospective clients get in touch. It includes dedicated Home, Services, About, and Contact pages, with an EmailJS-powered contact form.',
-      category: 'web',
-      technologies: [
-        'React',
-        'TypeScript',
-        'Vite',
-        'Tailwind CSS',
-        'EmailJS',
-      ],
-      image:
-        'https://consultants-company-website.vercel.app/consult%20bg.jpg',
-      liveUrl: 'https://consultants-company-website.vercel.app/',
-      githubUrl:
-        'https://github.com/Oraelys/Consultants-company-website',
-      featured: true,
-    },
-  ];
-
   const filters = [
     { id: 'all', label: 'All Projects', icon: Globe },
     { id: 'blockchain', label: 'Blockchain', icon: Coins },
     { id: 'web', label: 'Web Apps', icon: Globe },
-    { id: 'ai', label: 'AI/ML', icon: Brain },
+    { id: 'mobile', label: 'Mobile', icon: Smartphone },
   ];
 
   const filteredProjects =
@@ -138,9 +62,24 @@ const Projects = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8" />
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              A showcase of innovative projects spanning blockchain, AI, web
-              development, and automation tools.
+              A showcase of projects spanning mobile apps, blockchain, and web
+              development.
             </p>
+          </div>
+
+          {/* Project Groups */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-text-primary mb-2 text-center">
+              Product Ecosystems
+            </h3>
+            <p className="text-text-secondary text-center max-w-2xl mx-auto mb-10">
+              Larger products built as a family of apps sharing one backend.
+            </p>
+            <div className="space-y-10">
+              {projectGroups.map((group) => (
+                <ProjectGroup key={group.id} group={group} isVisible={isVisible} />
+              ))}
+            </div>
           </div>
 
           {/* Featured Projects */}
