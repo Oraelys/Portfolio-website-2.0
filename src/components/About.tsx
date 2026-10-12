@@ -72,10 +72,10 @@ const About = () => {
       description: 'Promoted from Core Backend Developer to CTO after building secure, scalable systems. Designed and maintained DRS systems and authentication flows.'
     },
     {
-      title: 'Front-end Developer',
+      title: 'Mobile Developer',
       company: 'Ovena (Startup)',
-      period: ' 0ct0ber 2025 - Present',
-      description: 'Built the backend for a food delivery platform (multi-restaurant, drivers, users) like Chowdeck. Integrated Paystack (payments), Mailchimp (SMS), GCP (OAuth), and Termii (OTP).'
+      period: 'October 2025 - Present',
+      description: 'Building a multi-restaurant food delivery platform (drivers, users and operations) in the vein of Chowdeck. Developed the Ovena Rider and Ovena Admin apps in React Native / Expo. Implemented real-time order tracking, route optimization, and user-friendly interfaces for drivers and administrators.'
     },
     {
       title: 'Front-end Developer (Freelance)',
